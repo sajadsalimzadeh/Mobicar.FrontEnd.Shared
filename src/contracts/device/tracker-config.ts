@@ -1,4 +1,4 @@
-import {Shape} from "@app/contracts/shape";
+import {Shape} from "../shape";
 
 export interface TrackerConfig {
     sensorInfo: SensorInfo

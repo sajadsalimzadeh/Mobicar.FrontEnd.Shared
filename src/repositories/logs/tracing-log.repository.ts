@@ -1,7 +1,7 @@
 import {Injectable, Injector} from '@angular/core';
-import {appSettings} from '../../app';
+import { BASE_URL_SHARED } from "../../config";
 import {BaseCrudRepository} from "@framework/repositories";
-import { TracingLog, TracingLogSaveRequest } from '@app/contracts/logs/tracing-log';
+import { TracingLog, TracingLogSaveRequest } from '@shared/contracts/logs/tracing-log';
 
 
 @Injectable({
@@ -10,7 +10,7 @@ import { TracingLog, TracingLogSaveRequest } from '@app/contracts/logs/tracing-l
 export class TracingLogRepository extends BaseCrudRepository<TracingLog, TracingLogSaveRequest> {
 
     constructor(injector: Injector) {
-        super(injector, appSettings.urls.api, 'TracingLogs');
+        super(injector, injector.get(BASE_URL_SHARED), 'TracingLogs');
     }
 
 }

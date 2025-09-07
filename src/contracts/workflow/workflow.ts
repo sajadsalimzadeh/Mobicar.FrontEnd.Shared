@@ -1,8 +1,7 @@
-import { CreationEntity, FullEntity } from "@framework/contracts"
+import { FullEntity } from "@framework/contracts"
 import { Organization } from "../organization/organization"
-import { Claim } from "@app/contracts/claim";
+import { Claim } from "../../contracts/claim";
 import { User } from "../identity/user";
-import { EnumUtil } from "@framework/utils";
 
 export enum WorkflowEntityType {
     Device = 1,
@@ -82,7 +81,7 @@ export interface WorkflowTransition extends FullEntity {
     privilege: WorkflowTransitionPrivilege;
     designInfo: WorkflowTransitionDesignInfo;
     functions: WorkflowTransitionFunction[];
-    
+
     screen?: Screen;
     workflow?: Workflow;
     sourceState?: WorkflowState;

@@ -1,7 +1,7 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {QueryResult} from '../contracts/response';
-import {appSettings} from '../app';
+import { BASE_URL_SHARED } from "../config";
 import {TripRequest, TripResponse} from '../contracts/report';
 
 @Injectable({
@@ -13,6 +13,6 @@ export class ReportRepository {
     }
 
     getTrip(req: TripRequest) {
-        return this.http.post<QueryResult<TripResponse[]>>(`${appSettings.urls.api}/Report/GetTripV2`, req)
+        return this.http.post<QueryResult<TripResponse[]>>(`${injector.get(BASE_URL_SHARED)}/Report/GetTripV2`, req)
     }
 }

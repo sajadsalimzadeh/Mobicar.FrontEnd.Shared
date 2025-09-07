@@ -1,18 +1,18 @@
 import { Injectable, Injector } from '@angular/core';
 import { CommandResult, QueryResult } from '@framework/contracts';
 import { User, UserActivity, UserAgentInfo, UserAgentInfoEditRequest, UserCustomer, UserDto, UserEditOwnRequest, UserInquiryResponse, UserMember, UserPrivilege, UserPushSubscriptionRequest, UserResetPasswordRequest, UserSearchRequest as UserSearchRequest, UserSendNotificationRequest, UserStatus } from '../../contracts/identity/user';
-import { appSettings } from '../../app';
+import { BASE_URL_SHARED } from "../../config";
 import { BaseCrudRepository } from "@framework/repositories";
-import { Vehicle } from "@app/contracts/vehicle";
-import { Token } from '@app/contracts/identity/token';
-import { AuthEntity, AuthEntityAccess, AuthEntityAccessItem, AuthLoginInfo, AuthLoginResponse } from "@app/contracts/identity/auth";
+import { Vehicle } from "@shared/contracts/vehicle";
+import { Token } from '@shared/contracts/identity/token';
+import { AuthEntity, AuthEntityAccess, AuthEntityAccessItem, AuthLoginInfo, AuthLoginResponse } from "@shared/contracts/identity/auth";
 import { map, tap } from "rxjs/operators";
-import { AccessRepository } from "@app/repositories/identity/access.repository";
-import { MessageDto } from '@app/contracts/message';
-import { Wallet } from '@app/contracts/finance/wallet';
-import { Organization } from '@app/contracts/organization/organization';
+import { AccessRepository } from "@shared/repositories/identity/access.repository";
+import { MessageDto } from '@shared/contracts/message';
+import { Wallet } from '@shared/contracts/finance/wallet';
+import { Organization } from '@shared/contracts/organization/organization';
 import { AuthRepository } from './auth.repository';
-import { BankInfo } from '@app/contracts/finance/bank-info';
+import { BankInfo } from '@shared/contracts/finance/bank-info';
 
 @Injectable({
     providedIn: 'root'
@@ -20,7 +20,7 @@ import { BankInfo } from '@app/contracts/finance/bank-info';
 export class UserRepository extends BaseCrudRepository<User> {
 
     constructor(injector: Injector, private authRepository: AuthRepository) {
-        super(injector, appSettings.urls.api, 'Users');
+        super(injector, injector.get(BASE_URL_SHARED), 'Users');
     }
 
     search(req: UserSearchRequest) {

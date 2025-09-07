@@ -1,7 +1,7 @@
 import {Injectable, Injector} from '@angular/core';
-import {appSettings} from '../../app';
+import { BASE_URL_SHARED } from "../../config";
 import {BaseCrudRepository} from "@framework/repositories";
-import { ApplicationVersion, ApplicationVersionSaveRequest } from '@app/contracts/versioning/application';
+import { ApplicationVersion, ApplicationVersionSaveRequest } from '@shared/contracts/versioning/application';
 
 
 @Injectable({
@@ -10,7 +10,7 @@ import { ApplicationVersion, ApplicationVersionSaveRequest } from '@app/contract
 export class ApplicationRepository extends BaseCrudRepository<ApplicationVersion, ApplicationVersionSaveRequest> {
 
     constructor(injector: Injector) {
-        super(injector, appSettings.urls.api, 'Applications');
+        super(injector, injector.get(BASE_URL_SHARED), 'Applications');
     }
 }
 

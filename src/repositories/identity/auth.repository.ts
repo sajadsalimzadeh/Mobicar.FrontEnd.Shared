@@ -1,6 +1,6 @@
 import { Injectable, Injector } from '@angular/core';
 import { QueryResult } from '@framework/contracts';
-import { appSettings } from '../../app';
+import { BASE_URL_SHARED } from "../../config";
 import {
     AuthLoginResponse,
     AuthRegisterRequest,
@@ -29,7 +29,7 @@ export class AuthRepository extends BaseApiRepository {
     currentOrganization?: AuthOrganization;
 
     constructor(injector: Injector, private accessRepository: AccessRepository) {
-        super(injector, appSettings.urls.api, 'Auth')
+        super(injector, injector.get(BASE_URL_SHARED), 'Auth')
     }
 
     tapLoginInfo() {

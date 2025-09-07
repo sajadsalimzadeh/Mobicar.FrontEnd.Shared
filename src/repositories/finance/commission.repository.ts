@@ -1,7 +1,7 @@
 
 import { Injectable, Injector } from '@angular/core';
-import { appSettings } from '@app/app';
-import { Commission } from '@app/contracts/finance/commission';
+import { BASE_URL_SHARED } from "../../config";
+import { Commission } from '@shared/contracts/finance/commission';
 import { CommandResult, QueryResult } from '@framework/contracts';
 import { BaseCrudRepository } from '@framework/repositories';
 
@@ -12,7 +12,7 @@ import { BaseCrudRepository } from '@framework/repositories';
 export class CommissionRepository extends BaseCrudRepository<Commission> {
 
     constructor(injector: Injector) {
-        super(injector, appSettings.urls.api, 'Commissions');
+        super(injector, injector.get(BASE_URL_SHARED), 'Commissions');
     }
 
     getAllOwn() {

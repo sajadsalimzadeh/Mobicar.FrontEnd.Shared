@@ -1,7 +1,7 @@
 import {Injectable, Injector} from '@angular/core';
-import {appSettings} from '../app';
+import { BASE_URL_SHARED } from "../config";
 import {BaseCrudRepository} from "@framework/repositories";;
-import { Claim, ClaimSaveRequest } from '@app/contracts/claim';
+import { Claim, ClaimSaveRequest } from '@shared/contracts/claim';
 
 
 @Injectable({
@@ -10,7 +10,7 @@ import { Claim, ClaimSaveRequest } from '@app/contracts/claim';
 export class ClaimRepository extends BaseCrudRepository<Claim, ClaimSaveRequest> {
 
     constructor(injector: Injector) {
-        super(injector, appSettings.urls.api, 'Workflows');
+        super(injector, injector.get(BASE_URL_SHARED), 'Workflows');
     }
 }
 

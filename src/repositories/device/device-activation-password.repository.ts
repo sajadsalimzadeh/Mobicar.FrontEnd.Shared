@@ -1,7 +1,7 @@
-import {Injectable, Injector} from '@angular/core';
-import {appSettings} from '../../app';
-import {BaseCrudRepository} from "@framework/repositories";
-import { DeviceActivationPassword, DeviceActivationPasswordResetRequest, DeviceActivationPasswordSaveRequest } from '@app/contracts/device/device-activation-password';
+import { Injectable, Injector } from '@angular/core';
+import { BASE_URL_SHARED } from "../../config";
+import { BaseCrudRepository } from "@framework/repositories";
+import { DeviceActivationPassword, DeviceActivationPasswordResetRequest, DeviceActivationPasswordSaveRequest } from '@shared/contracts/device/device-activation-password';
 import { CommandResult } from '@framework/contracts';
 
 
@@ -11,7 +11,7 @@ import { CommandResult } from '@framework/contracts';
 export class DeviceActivationPasswordRepository extends BaseCrudRepository<DeviceActivationPassword, DeviceActivationPasswordSaveRequest> {
 
     constructor(injector: Injector) {
-        super(injector, appSettings.urls.api, 'DeviceActivationPasswords');
+        super(injector, injector.get(BASE_URL_SHARED), 'DeviceActivationPasswords');
     }
 
     reset(id: string, req: DeviceActivationPasswordResetRequest) {

@@ -1,7 +1,7 @@
 import { Injectable, Injector } from '@angular/core';
-import { appSettings } from '../../app';
+import { BASE_URL_SHARED } from "../../config";
 import { BaseCrudRepository } from "@framework/repositories";
-import { DeviceGroup, DeviceGroupSaveRequest } from '@app/contracts/device/device-group';
+import { DeviceGroup, DeviceGroupSaveRequest } from '@shared/contracts/device/device-group';
 
 
 @Injectable({
@@ -10,7 +10,7 @@ import { DeviceGroup, DeviceGroupSaveRequest } from '@app/contracts/device/devic
 export class DeviceGroupRepository extends BaseCrudRepository<DeviceGroup, DeviceGroupSaveRequest> {
 
     constructor(injector: Injector) {
-        super(injector, appSettings.urls.api, 'DeviceGroups');
+        super(injector, injector.get(BASE_URL_SHARED), 'DeviceGroups');
     }
 
 }

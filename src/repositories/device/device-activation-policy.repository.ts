@@ -1,6 +1,6 @@
 import { Injectable, Injector } from "@angular/core";
-import { appSettings } from "@app/app";
-import { DeviceActivationPolicyWithCodesDto } from "@app/contracts/device/device-activation";
+import { BASE_URL_SHARED } from "../../config";
+import { DeviceActivationPolicyWithCodesDto } from "../../contracts/device/device-activation";
 import { QueryResult } from "@framework/contracts";
 import { BaseApiRepository } from "@framework/repositories";
 
@@ -8,7 +8,7 @@ import { BaseApiRepository } from "@framework/repositories";
 export class DeviceActivationPolicyRepository extends BaseApiRepository {
 
     constructor(injector: Injector) {
-        super(injector, appSettings.urls.api, 'DeviceActivationPolicies');
+        super(injector, injector.get(BASE_URL_SHARED), 'DeviceActivationPolicies');
     }
 
     getActivationWithCodes(id: string) {

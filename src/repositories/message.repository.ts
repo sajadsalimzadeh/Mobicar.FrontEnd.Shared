@@ -1,7 +1,7 @@
 import {Injectable, Injector} from '@angular/core';
-import {appSettings} from '../app';
+import { BASE_URL_SHARED } from "../config";
 import {BaseCrudRepository} from "@framework/repositories";;
-import { MessageDto } from '@app/contracts/message';
+import { MessageDto } from '@shared/contracts/message';
 
 
 @Injectable({
@@ -10,7 +10,7 @@ import { MessageDto } from '@app/contracts/message';
 export class MessageRepository extends BaseCrudRepository<MessageDto> {
 
     constructor(injector: Injector) {
-        super(injector, appSettings.urls.api, 'Messages');
+        super(injector, injector.get(BASE_URL_SHARED), 'Messages');
     }
 }
 

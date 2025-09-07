@@ -1,7 +1,6 @@
-import { HttpClient } from "@angular/common/http";
 import { Injectable, Injector } from "@angular/core";
-import { appSettings } from "@app/app";
-import { UnknwonDtcDto } from "@app/contracts/diag/diag";
+import { BASE_URL_SHARED } from "../config";
+import { UnknwonDtcDto } from "@shared/contracts/diag/diag";
 import { PagedListResult } from "@framework/contracts";
 import { BaseApiRepository } from "@framework/repositories";
 
@@ -10,7 +9,7 @@ import { BaseApiRepository } from "@framework/repositories";
 })
 export class DiagRepository extends BaseApiRepository {
     constructor(injector: Injector) {
-        super(injector, appSettings.urls.api, 'Diag');
+        super(injector, injector.get(BASE_URL_SHARED), 'Diag');
     }
 
     getAllUnknownDtc() {

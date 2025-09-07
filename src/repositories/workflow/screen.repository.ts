@@ -1,6 +1,6 @@
 import { Injectable, Injector } from '@angular/core';
 import { Screen, ScreenSaveRequest } from '../../contracts/screen';
-import { appSettings } from '../../app';
+import { BASE_URL_SHARED } from "../../config";
 import { BaseCrudRepository } from "@framework/repositories";
 
 
@@ -10,7 +10,7 @@ import { BaseCrudRepository } from "@framework/repositories";
 export class ScreenRepository extends BaseCrudRepository<Screen, ScreenSaveRequest> {
 
     constructor(injector: Injector) {
-        super(injector, appSettings.urls.api, 'Screens');
+        super(injector, injector.get(BASE_URL_SHARED), 'Screens');
     }
 }
 

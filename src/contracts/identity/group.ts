@@ -1,7 +1,7 @@
-import { CreationEntity, FullEntity } from "@framework/contracts";
-import { Claim } from "@app/contracts/claim";
-import { Privilege } from "@app/contracts/identity/access";
-import { Organization } from "@app/contracts/organization/organization";
+import { CreationEntity } from "@framework/contracts";
+import { Claim } from "../claim";
+import { Privilege } from "../identity/access";
+import { Organization } from "../organization/organization";
 
 export interface Group extends CreationEntity {
     organizationId: string

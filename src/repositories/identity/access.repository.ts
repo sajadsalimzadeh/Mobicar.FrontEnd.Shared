@@ -1,5 +1,5 @@
 import {Injectable, Injector} from '@angular/core';
-import {appSettings} from '../../app';
+import { BASE_URL_SHARED } from "../../config";
 import {QueryResult} from '@framework/contracts';
 import {Access} from '../../contracts/identity/access';
 import {BaseApiRepository} from "@framework/repositories";
@@ -13,7 +13,7 @@ export class AccessRepository extends BaseApiRepository {
     accessDictionary: { [key: string]: string[] } = {};
 
     constructor(injector: Injector) {
-        super(injector, appSettings.urls.api, 'Accesses');
+        super(injector, injector.get(BASE_URL_SHARED), 'Accesses');
 
     }
 

@@ -1,9 +1,9 @@
 import { Injectable, Injector } from '@angular/core';
 import { Organization } from '../../contracts/organization/organization';
-import { appSettings } from '../../app';
+import { BASE_URL_SHARED } from "../../config";
 import { BaseCrudRepository } from "@framework/repositories";
 import { QueryResult } from '@framework/contracts';
-import { Server } from '@app/contracts/organization/server';
+import { Server } from '@shared/contracts/organization/server';
 
 @Injectable({
     providedIn: 'root'
@@ -11,7 +11,7 @@ import { Server } from '@app/contracts/organization/server';
 export class OrganizationRepository extends BaseCrudRepository<Organization> {
 
     constructor(injector: Injector) {
-        super(injector, appSettings.urls.api, 'Organizations');
+        super(injector, injector.get(BASE_URL_SHARED), 'Organizations');
     }
 
     getAllServer(id: any) {

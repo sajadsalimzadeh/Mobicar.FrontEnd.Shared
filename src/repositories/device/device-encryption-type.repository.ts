@@ -1,7 +1,7 @@
 import { Injectable, Injector } from '@angular/core';
-import { appSettings } from '../../app';
+import { BASE_URL_SHARED } from "../../config";
 import { BaseCrudRepository } from "@framework/repositories";
-import { DeviceEncryptionType } from '@app/contracts/device/device-encryption-type';
+import { DeviceEncryptionType } from '@shared/contracts/device/device-encryption-type';
 
 
 @Injectable({
@@ -10,7 +10,7 @@ import { DeviceEncryptionType } from '@app/contracts/device/device-encryption-ty
 export class DeviceEncryptionTypeRepository extends BaseCrudRepository<DeviceEncryptionType> {
 
     constructor(injector: Injector) {
-        super(injector, appSettings.urls.api, 'DeviceEncryptionTypes');
+        super(injector, injector.get(BASE_URL_SHARED), 'DeviceEncryptionTypes');
     }
 
 }

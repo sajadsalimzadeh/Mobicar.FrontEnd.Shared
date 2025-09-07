@@ -1,8 +1,8 @@
 
 import { Injectable, Injector } from '@angular/core';
-import { appSettings } from '@app/app';
-import { Clearance, ClearanceAddRequest, ClearancePayRequest } from '@app/contracts/finance/clearance';
-import { Withdraw } from '@app/contracts/finance/withdraw';
+import { BASE_URL_SHARED } from "../../config";
+import { Clearance, ClearanceAddRequest, ClearancePayRequest } from '@shared/contracts/finance/clearance';
+import { Withdraw } from '@shared/contracts/finance/withdraw';
 import { QueryResult } from '@framework/contracts';
 import { BaseApiRepository } from '@framework/repositories';
 
@@ -13,7 +13,7 @@ import { BaseApiRepository } from '@framework/repositories';
 export class ClearanceRepository extends BaseApiRepository {
 
     constructor(injector: Injector) {
-        super(injector, appSettings.urls.api, 'Clearances');
+        super(injector, injector.get(BASE_URL_SHARED), 'Clearances');
     }
 
     getAll() {

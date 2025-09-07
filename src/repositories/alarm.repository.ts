@@ -1,7 +1,7 @@
 import { Injectable, Injector } from "@angular/core";
 import { BaseCrudRepository } from "@framework/repositories";
-import { AlaramSaveRequest, Alarm } from "@app/contracts/alarm";
-import { appSettings } from "@app/app";
+import { AlaramSaveRequest, Alarm } from "@shared/contracts/alarm";
+import { BASE_URL_SHARED } from "../config";
 
 @Injectable({
     providedIn:'root'
@@ -9,6 +9,6 @@ import { appSettings } from "@app/app";
 export class AlaramRepository extends BaseCrudRepository<Alarm, AlaramSaveRequest> {
 
     constructor(injector: Injector) {
-        super(injector, appSettings.urls.api, 'Alarms');
+        super(injector, injector.get(BASE_URL_SHARED), 'Alarms');
     }
 }

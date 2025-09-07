@@ -1,7 +1,7 @@
 import { Injectable, Injector } from '@angular/core';
-import { appSettings } from '../../app';
+import { BASE_URL_SHARED } from "../../config";
 import { BaseCrudRepository } from "@framework/repositories";
-import { Firmware, FirmwareSaveRequest } from '@app/contracts/versioning/firmware';
+import { Firmware, FirmwareSaveRequest } from '@shared/contracts/versioning/firmware';
 
 
 @Injectable({
@@ -10,7 +10,7 @@ import { Firmware, FirmwareSaveRequest } from '@app/contracts/versioning/firmwar
 export class FirmwareRepository extends BaseCrudRepository<Firmware, FirmwareSaveRequest> {
 
     constructor(injector: Injector) {
-        super(injector, appSettings.urls.api, 'Firmwares');
+        super(injector, injector.get(BASE_URL_SHARED), 'Firmwares');
     }
 
 }

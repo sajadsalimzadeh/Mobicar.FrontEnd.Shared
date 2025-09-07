@@ -1,7 +1,7 @@
 import { Injectable, Injector } from '@angular/core';
-import { appSettings } from '../../app';
+import { BASE_URL_SHARED } from "../../config";
 import { BaseCrudRepository } from "@framework/repositories";
-import { Withdraw, WithdrawCancelRequest } from '@app/contracts/finance/withdraw';
+import { Withdraw, WithdrawCancelRequest } from '@shared/contracts/finance/withdraw';
 import { QueryResult } from '@framework/contracts';
 
 @Injectable({
@@ -10,7 +10,7 @@ import { QueryResult } from '@framework/contracts';
     export class WithdrawRepository extends BaseCrudRepository<Withdraw> {
 
     constructor(injector: Injector) {
-        super(injector, appSettings.urls.api, 'Withdraws');
+        super(injector, injector.get(BASE_URL_SHARED), 'Withdraws');
     }
 
     cancel(id: string, req: WithdrawCancelRequest) {

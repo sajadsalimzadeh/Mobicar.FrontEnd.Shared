@@ -1,6 +1,6 @@
-import { Claim } from "@app/contracts/claim";
+import { Claim } from "../../contracts/claim";
 import { CreationEntity, FullEntity } from "@framework/contracts";
-import { Privilege, PrivilegeAction, PrivilegeEntity } from "@app/contracts/identity/access";
+import { Privilege, PrivilegeAction, PrivilegeEntity } from "../../contracts/identity/access";
 import { Gender } from "../gender";
 import { Order, OrderPaymentMethod, OrderStatus, OrderType } from "../sale/order";
 import { Attachment } from "@framework/contracts/attachment";

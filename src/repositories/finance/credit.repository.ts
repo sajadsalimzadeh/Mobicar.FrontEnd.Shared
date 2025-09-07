@@ -1,7 +1,7 @@
 import { Injectable, Injector } from '@angular/core';
-import { appSettings } from '../../app';
+import { BASE_URL_SHARED } from "../../config";
 import { BaseCrudRepository } from "@framework/repositories";
-import { Credit } from "@app/contracts/finance/credit";
+import { Credit } from "@shared/contracts/finance/credit";
 import { QueryResult } from '@framework/contracts';
 
 @Injectable({
@@ -10,7 +10,7 @@ import { QueryResult } from '@framework/contracts';
 export class CreditRepository extends BaseCrudRepository<Credit> {
 
     constructor(injector: Injector) {
-        super(injector, appSettings.urls.api, 'Credits');
+        super(injector, injector.get(BASE_URL_SHARED), 'Credits');
     }
 
     getAllOwn() {

@@ -1,7 +1,7 @@
 import { Injectable, Injector } from '@angular/core';
-import { AntiTheft, AntiTheftSaveRequest } from '@app/contracts/anti-theft';
+import { AntiTheft, AntiTheftSaveRequest } from '@shared/contracts/anti-theft';
 import { BaseCrudRepository } from '@framework/repositories';
-import { appSettings } from '@app/app';
+import { BASE_URL_SHARED } from '../../config';
 
 
 @Injectable({
@@ -10,7 +10,7 @@ import { appSettings } from '@app/app';
 export class AntiTheftRepository  extends BaseCrudRepository<AntiTheft, AntiTheftSaveRequest> {
 
     constructor(injector: Injector) {
-        super(injector, appSettings.urls.api, 'AntiThefts');
+        super(injector, injector.get(BASE_URL_SHARED), 'AntiThefts');
     }
 
 }

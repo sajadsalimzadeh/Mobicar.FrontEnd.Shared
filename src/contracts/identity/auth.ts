@@ -1,10 +1,10 @@
-import {Gender} from "@app/contracts/gender";
-import {OtpType} from "@app/contracts/identity/otp";
-import {CreationEntity} from "@framework/contracts";
-import {PrivilegeDataFilter, PrivilegeEntityType} from "./access";
-import {Hardware, HardwareType} from "../versioning/hardware";
-import {Organization} from "../organization/organization";
-import {User, UserDto} from "./user";
+import { Gender } from "../gender";
+import { OtpType } from "../identity/otp";
+import { CreationEntity } from "@framework/contracts";
+import { PrivilegeDataFilter, PrivilegeEntityType } from "./access";
+import { HardwareType } from "../versioning/hardware";
+import { Organization } from "../organization/organization";
+import { UserDto } from "./user";
 import { WorkflowStateDesignInfo, WorkflowTransitionDesignInfo } from "../workflow/workflow";
 
 export interface AuthLoginRequest {
@@ -12,7 +12,7 @@ export interface AuthLoginRequest {
     rememberMe: boolean;
 }
 
-export interface AuthLoginWithPasswordRequest extends AuthLoginRequest{
+export interface AuthLoginWithPasswordRequest extends AuthLoginRequest {
     username: string;
     password: string;
 }
@@ -87,7 +87,7 @@ export interface AuthEntityDevice extends AuthEntity {
     hardwareId: string;
     workflowStateId: string;
     hardwareType: HardwareType;
-    
+
     user?: AuthUser;
     organization?: AuthOrganization;
     hardware?: AuthHardware;
@@ -154,7 +154,7 @@ export interface AuthUser {
 export type AuthCheckAccess = {
     value: string;
     type: 'action';
-} |  {
+} | {
     value: string;
     type: 'device';
     deviceId: string;

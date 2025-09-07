@@ -1,12 +1,11 @@
-import {HttpClient} from '@angular/common/http';
 import {Injectable, Injector} from '@angular/core';
 import {QueryResult} from '@framework/contracts';
 import {ProtocolManifest} from '../contracts/diag/manifest';
-import { appSettings } from '@app/app';
-import { ProtocolVersion } from '@app/contracts/diag/protocolVersion';
-import { VehicleTree } from '@app/contracts/diag/vehicle-tree';
+import { ProtocolVersion } from '@shared/contracts/diag/protocolVersion';
+import { VehicleTree } from '@shared/contracts/diag/vehicle-tree';
 import { BaseApiRepository } from '@framework/repositories';
-import { EcuType } from '@app/contracts/diag/ecu-type';
+import { EcuType } from '@shared/contracts/diag/ecu-type';
+import { BASE_URL_DIAG } from '../config';
 
 
 @Injectable({
@@ -15,7 +14,7 @@ import { EcuType } from '@app/contracts/diag/ecu-type';
 export class DiagServerProtocolRepository extends BaseApiRepository {
 
     constructor(injector: Injector) {
-        super(injector, appSettings.urls.diag, 'Protocols');
+        super(injector, injector.get(BASE_URL_DIAG), 'Protocols');
     }
 
     getAllManifest() {

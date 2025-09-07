@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable, Injector } from "@angular/core";
-import { appSettings } from "@app/app";
-import { Currency } from "@app/contracts/finance/wallet";
+import { BASE_URL_SHARED } from "../../config";
+import { Currency } from "@shared/contracts/finance/wallet";
 import { QueryResult } from "@framework/contracts";
 import { BaseApiRepository } from "@framework/repositories";
 
@@ -10,7 +10,7 @@ import { BaseApiRepository } from "@framework/repositories";
 })
 export class CurrencyRepository extends BaseApiRepository {
     constructor(injector: Injector) {
-        super(injector, appSettings.urls.api, 'Currencies');
+        super(injector, injector.get(BASE_URL_SHARED), 'Currencies');
     }
 
     getAll() {

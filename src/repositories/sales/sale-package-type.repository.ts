@@ -1,7 +1,7 @@
 import {Injectable, Injector} from '@angular/core';
-import {appSettings} from '../../app';
+import { BASE_URL_SHARED } from "../../config";
 import {BaseCrudRepository} from "@framework/repositories";
-import { SalePackageType, SalePackageTypeSaveRequest } from '@app/contracts/sale/sale-package';
+import { SalePackageType, SalePackageTypeSaveRequest } from '@shared/contracts/sale/sale-package';
 
 
 @Injectable({
@@ -10,6 +10,6 @@ import { SalePackageType, SalePackageTypeSaveRequest } from '@app/contracts/sale
 export class SalePackageTypeRepository extends BaseCrudRepository<SalePackageType, SalePackageTypeSaveRequest> {
 
     constructor(injector: Injector) {
-        super(injector, appSettings.urls.api, 'SalePackageTypes');
+        super(injector, injector.get(BASE_URL_SHARED), 'SalePackageTypes');
     }
 }

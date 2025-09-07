@@ -1,7 +1,7 @@
 import { FullEntity } from "@framework/contracts"
 import { Firmware } from "../versioning/firmware";
 import { TrackerConfig } from "../device/tracker-config"
-import { Server } from "@app/contracts/organization/server";
+import { Server } from "../../contracts/organization/server";
 
 export interface Organization extends FullEntity {
     name: string

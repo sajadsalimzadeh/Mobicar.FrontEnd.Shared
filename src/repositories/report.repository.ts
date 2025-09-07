@@ -1,5 +1,5 @@
 import {HttpClient} from '@angular/common/http';
-import {Injectable} from '@angular/core';
+import {Injectable, Injector} from '@angular/core';
 import {
     LocationReponse,
     LocationRequest,
@@ -17,12 +17,14 @@ import {
     TripSensorsResponse
 } from '../contracts/report';
 import {QueryResult} from '@framework/contracts';
-import {appSettings} from '../app';
+import { BASE_URL_SHARED } from "../config";
+import { BaseApiRepository } from '@framework/repositories';
 
 @Injectable({providedIn: 'root'})
-export class ReportRepository {
+export class ReportRepository extends BaseApiRepository {
 
-    constructor(private http: HttpClient) {
+    constructor(injector: Injector) {
+        super(injector, injector.get(BASE_URL_SHARED), 'Reports')
     }
 
     getSaleDevice(req: { period: ReportPeriodType }) {
@@ -34,36 +36,36 @@ export class ReportRepository {
     }
 
     getTrip(req: TripRequest) {
-        return this.http.post<QueryResult<TripResponse[]>>(`${appSettings.urls.api}/Report/GetTripV2`, req)
+        return this.http.post<QueryResult<TripResponse[]>>(`GetTripV2`, req)
     }
 
     getTripLocation(req: TripParametersRequest) {
-        return this.http.post<QueryResult<TripLocationResponse[]>>(`${appSettings.urls.api}/Report/GetTripLocations`, req)
+        return this.http.post<QueryResult<TripLocationResponse[]>>(`GetTripLocations`, req)
     }
 
     getTripAlarmEvents(req: TripParametersRequest) {
-        return this.http.post<QueryResult<TripAlarmResponse[]>>(`${appSettings.urls.api}/Report/GetTripAlarmEvents`, req)
+        return this.http.post<QueryResult<TripAlarmResponse[]>>(`GetTripAlarmEvents`, req)
     }
 
     getTripParameters(req: TripParametersRequest) {
-        return this.http.post<QueryResult<TripParametersResponse[]>>(`${appSettings.urls.api}/Report/GetTripParameters`, req)
+        return this.http.post<QueryResult<TripParametersResponse[]>>(`GetTripParameters`, req)
     }
 
     getTripSensors(req: TripParametersRequest) {
-        return this.http.post<QueryResult<TripSensorsResponse[]>>(`${appSettings.urls.api}/Report/GetTripSensors`, req)
+        return this.http.post<QueryResult<TripSensorsResponse[]>>(`GetTripSensors`, req)
     }
 
 
     getTripCommands(req: TripParametersRequest) {
-        return this.http.post<QueryResult<TripCommandsResponse[]>>(`${appSettings.urls.api}/Report/GetTripCommands`, req)
+        return this.http.post<QueryResult<TripCommandsResponse[]>>(`GetTripCommands`, req)
     }
 
     getTripMotions(req: TripParametersRequest) {
-        return this.http.post<QueryResult<TripMotionsResponse[]>>(`${appSettings.urls.api}/Report/GetTripMotions`, req)
+        return this.http.post<QueryResult<TripMotionsResponse[]>>(`GetTripMotions`, req)
     }
 
     getLocation(req: LocationRequest) {
-        return this.http.post<QueryResult<LocationReponse[]>>(`${appSettings.urls.api}/Report/GetLocation`, req)
+        return this.http.post<QueryResult<LocationReponse[]>>(`GetLocation`, req)
 
     }
 

@@ -1,5 +1,5 @@
 import {Injectable, Injector} from '@angular/core';
-import {appSettings} from '../../app';
+import { BASE_URL_SHARED } from "../../config";
 import {BaseCrudRepository} from "@framework/repositories";
 import { WorkflowState, WorkflowStateSaveRequest } from '../../contracts/workflow/workflow';
 
@@ -10,6 +10,6 @@ import { WorkflowState, WorkflowStateSaveRequest } from '../../contracts/workflo
 export class WorkflowStateRepository extends BaseCrudRepository<WorkflowState, WorkflowStateSaveRequest> {
 
     constructor(injector: Injector) {
-        super(injector, appSettings.urls.api, 'WorkflowStates');
+        super(injector, injector.get(BASE_URL_SHARED), 'WorkflowStates');
     }
 }

@@ -1,7 +1,7 @@
 import {Injectable, Injector} from '@angular/core';
-import {appSettings} from '../../app';
+import { BASE_URL_SHARED } from "../../config";
 import {BaseCrudRepository} from "@framework/repositories";
-import { Hardware, HardwareSaveRequest } from '@app/contracts/versioning/hardware';
+import { Hardware, HardwareSaveRequest } from '@shared/contracts/versioning/hardware';
 
 
 @Injectable({
@@ -10,7 +10,7 @@ import { Hardware, HardwareSaveRequest } from '@app/contracts/versioning/hardwar
 export class HardwareRepository extends BaseCrudRepository<Hardware, HardwareSaveRequest> {
 
     constructor(injector: Injector) {
-        super(injector, appSettings.urls.api, 'Hardwares');
+        super(injector, injector.get(BASE_URL_SHARED), 'Hardwares');
     }
 
 }

@@ -2,11 +2,11 @@ import { Injectable, Injector } from '@angular/core';
 import { QueryResult } from '@framework/contracts';
 import { UserDevices } from '../../contracts/identity/user';
 import { BaseCrudRepository } from "@framework/repositories";
-import { appSettings } from "../../app";
-import { Device, DeviceAddBulkRequest, DeviceDto, DeviceSaveRequest } from '@app/contracts/device/device';
+import { Device, DeviceAddBulkRequest, DeviceDto, DeviceSaveRequest } from '@shared/contracts/device/device';
 import { CommandResult } from "@framework/contracts/results";
-import { DevicesWorkflowTransitionSaveRequest, WorkflowTransition, WorkflowTransitionLog } from '@app/contracts/workflow/workflow';
-import { DeviceActivationPolicy } from '@app/contracts/device/device-activation';
+import { DevicesWorkflowTransitionSaveRequest, WorkflowTransition, WorkflowTransitionLog } from '@shared/contracts/workflow/workflow';
+import { DeviceActivationPolicy } from '@shared/contracts/device/device-activation';
+import { BASE_URL_SHARED } from '@shared/config';
 
 @Injectable({
     providedIn: 'root'
@@ -14,7 +14,7 @@ import { DeviceActivationPolicy } from '@app/contracts/device/device-activation'
 export class DeviceRepository extends BaseCrudRepository<Device, DeviceSaveRequest> {
 
     constructor(injector: Injector) {
-        super(injector, appSettings.urls.api, 'Devices');
+        super(injector, injector.get(BASE_URL_SHARED), 'Devices');
     }
 
     addBulk(req: DeviceAddBulkRequest) {

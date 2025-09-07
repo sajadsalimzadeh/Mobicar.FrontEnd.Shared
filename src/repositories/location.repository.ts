@@ -1,7 +1,7 @@
 import {Injectable, Injector} from '@angular/core';
-import {appSettings} from '../app';
+import { BASE_URL_SHARED } from "../config";
 import {BaseCrudRepository} from "@framework/repositories";
-import { Location, LocationSaveRequest } from '@app/contracts/location';
+import { Location, LocationSaveRequest } from '@shared/contracts/location';
 
 
 @Injectable({
@@ -10,7 +10,7 @@ import { Location, LocationSaveRequest } from '@app/contracts/location';
 export class LocationRepository extends BaseCrudRepository<Location, LocationSaveRequest> {
 
     constructor(injector: Injector) {
-        super(injector, appSettings.urls.api, 'Locations');
+        super(injector, injector.get(BASE_URL_SHARED), 'Locations');
     }
 
 }

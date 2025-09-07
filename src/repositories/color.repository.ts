@@ -1,5 +1,5 @@
 import {Injectable, Injector} from '@angular/core';
-import {appSettings} from '../app';
+import { BASE_URL_SHARED } from "../config";
 import {Color, ColorSaveRequest} from '../contracts/color';
 import {BaseCrudRepository} from "@framework/repositories";
 
@@ -9,7 +9,7 @@ import {BaseCrudRepository} from "@framework/repositories";
 export class ColorRepository extends BaseCrudRepository<Color, ColorSaveRequest> {
 
     constructor(injector: Injector) {
-        super(injector, appSettings.urls.api, 'Colors');
+        super(injector, injector.get(BASE_URL_SHARED), 'Colors');
     }
 
 }

@@ -1,6 +1,6 @@
 import { Injectable, Injector } from "@angular/core";
-import { appSettings } from "@app/app";
-import { DashboardAdminResponse, DashboardAgentResponse, DashboardDeviceResponse, DashboardFinanceResponse, DashboardSaleResponse } from "@app/contracts/dashboard";
+import { BASE_URL_SHARED } from "../config";
+import { DashboardAdminResponse, DashboardAgentResponse, DashboardDeviceResponse, DashboardFinanceResponse, DashboardSaleResponse } from "@shared/contracts/dashboard";
 import { QueryResult } from "@framework/contracts";
 import { BaseApiRepository } from "@framework/repositories";
 
@@ -8,7 +8,7 @@ import { BaseApiRepository } from "@framework/repositories";
 export class DashboardRepository extends BaseApiRepository {
 
     constructor(injector: Injector) {
-        super(injector, appSettings.urls.api, 'Dashboard');
+        super(injector, injector.get(BASE_URL_SHARED), 'Dashboard');
     }
 
     getAdminDashboard() {

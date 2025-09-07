@@ -1,8 +1,8 @@
 import { Injectable, Injector } from '@angular/core';
 import { QueryResult } from '@framework/contracts';
 import { Wallet, WalletChargeRequest, PaymentGatewayChargeResponse } from '../../contracts/finance/wallet';
-import { appSettings } from '@app/app';
-import { Transaction } from '@app/contracts/finance/transaction';
+import { BASE_URL_SHARED } from "../../config";
+import { Transaction } from '@shared/contracts/finance/transaction';
 import { BaseApiRepository } from '@framework/repositories';
 
 
@@ -12,7 +12,7 @@ import { BaseApiRepository } from '@framework/repositories';
 export class WalletRepository extends BaseApiRepository {
 
     constructor(injector: Injector) {
-        super(injector, appSettings.urls.api, 'Wallets');
+        super(injector, injector.get(BASE_URL_SHARED), 'Wallets');
     }
 
     getAllOwn() {

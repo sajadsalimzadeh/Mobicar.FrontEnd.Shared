@@ -98,4 +98,8 @@ export interface DeviceSaveRequest {
 
 }
 
-
+export interface DeviceGetByPolicyRequest {
+    applicationVersion?: string;
+    firmwareVersion?: string;
+    hardwareVersion?: string;
+}

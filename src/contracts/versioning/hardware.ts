@@ -6,6 +6,12 @@ export enum HardwareType {
     Tracker = 2,
 }
 
+
+export function HardwareTypeGetImage(type: HardwareType) {
+    if (type == HardwareType.Dongle) return 'assets/images/hardware-types/dongle.png';
+    return '';
+}
+
 export const HardwareTypes = EnumUtil.getObject(HardwareType);
 
 export interface Hardware extends FullEntity {

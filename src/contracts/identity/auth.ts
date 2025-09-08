@@ -142,7 +142,7 @@ export interface AuthOrganization {
 
 export interface AuthHardware {
     id: string;
-    name: string;
+    version: string;
 }
 
 export interface AuthUser {

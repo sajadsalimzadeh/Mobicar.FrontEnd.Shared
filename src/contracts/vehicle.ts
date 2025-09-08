@@ -3,16 +3,19 @@ import { Color } from "@shared/contracts/color";
 import { User } from "@shared/contracts/identity/user";
 
 export interface Vehicle extends FullEntity {
-    userId: string
-    colorId: string
-    companyCode: string
-    displayName: string
-    name: string
-    vin: string
-    engineVolume: number
+    userId: string;
+    colorId: string;
+    companyCode: string;
+    displayName: string;
+    name: string;
+    vin: string;
+    createdYear: number;
+    treePath: string;
+    ecus?: VehicleEcu[];
+    engineVolume: number;
     plate: VehiclePlate;
 
-    user?: User
+    user?: User;
     color?: Color;
 }
 
@@ -24,6 +27,14 @@ export interface VehicleSaveRequest {
     vin: string
     engineVolume: number
     plate: VehiclePlate
+}
+
+export interface VehicleEcu {
+    ecuTypeCode: number;
+    name: string;
+    filename: string;
+
+    favoriteParameters: string[]
 }
 
 export type VehiclePlateType = 'iran';

@@ -7,6 +7,7 @@ import { CommandResult } from "@framework/contracts/results";
 import { DevicesWorkflowTransitionSaveRequest, WorkflowTransition, WorkflowTransitionLog } from '@shared/contracts/workflow/workflow';
 import { DeviceActivationPolicy } from '@shared/contracts/device/device-activation';
 import { BASE_URL_SHARED } from '@shared/config';
+import { Order, OrderSellDeviceRequest } from '@shared/contracts/sale/order';
 
 @Injectable({
     providedIn: 'root'
@@ -64,5 +65,9 @@ export class DeviceRepository extends BaseCrudRepository<Device, DeviceSaveReque
 
     deleteActivationPolicy(deviceId: string, id: string) {
         return this.http.delete<CommandResult>(`${deviceId}/ActivationPolicies/${id}`);
+    }
+
+    sell(id: string, req: OrderSellDeviceRequest) {
+        return this.http.post<QueryResult<Order>>(`${id}/Sell`, req);
     }
 }

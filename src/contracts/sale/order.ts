@@ -80,7 +80,7 @@ export const OrderStatusLabels: any = {
 }
 
 
-export interface OrderSellDeviceByAgentRequest {
+export interface OrderSellDeviceRequest {
     userId: string;
     deviceId: string;
     currencyId: string;

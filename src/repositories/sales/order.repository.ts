@@ -1,6 +1,6 @@
 import { Injectable, Injector } from "@angular/core";
 import { BASE_URL_SHARED } from "../../config";
-import { Order, OrderSellDeviceByAgentRequest } from "@shared/contracts/sale/order";
+import { Order, OrderSellDeviceRequest } from "@shared/contracts/sale/order";
 import { QueryResult } from "@framework/contracts";
 import { Attachment } from "@framework/contracts/attachment";
 import { BaseCrudRepository } from "@framework/repositories";
@@ -13,7 +13,7 @@ export class OrderRepository extends BaseCrudRepository<Order> {
         super(injector, injector.get(BASE_URL_SHARED), 'Orders');
     }
 
-    sellByAgent(req: OrderSellDeviceByAgentRequest) {
+    sellByAgent(req: OrderSellDeviceRequest) {
         return this.http.post<QueryResult<Order>>('SellDeviceByAgent', req);
     }
 

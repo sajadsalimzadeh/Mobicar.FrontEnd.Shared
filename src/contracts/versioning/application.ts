@@ -1,7 +1,7 @@
 import { FullEntity } from "@framework/contracts"
 import { DeviceVersioningPolicy } from "../policy"
 
-export interface ApplicationVersion extends FullEntity {
+export interface Application extends FullEntity {
     version: string
     url: string
     description: string
@@ -9,7 +9,7 @@ export interface ApplicationVersion extends FullEntity {
     accessibility: string[]
 }
 
-export interface ApplicationVersionSaveRequest {
+export interface ApplicationSaveRequest {
     id: any
     version: string
     url: string

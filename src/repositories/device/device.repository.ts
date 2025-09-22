@@ -2,12 +2,16 @@ import { Injectable, Injector } from '@angular/core';
 import { QueryResult } from '@framework/contracts';
 import { UserDevices } from '../../contracts/identity/user';
 import { BaseCrudRepository } from "@framework/repositories";
-import { Device, DeviceAddBulkRequest, DeviceDto, DeviceSaveRequest } from '@shared/contracts/device/device';
+import { Device, DeviceAddBulkRequest, DeviceDto, DeviceGetByPolicyRequest, DeviceSaveRequest } from '@shared/contracts/device/device';
 import { CommandResult } from "@framework/contracts/results";
 import { DevicesWorkflowTransitionSaveRequest, WorkflowTransition, WorkflowTransitionLog } from '@shared/contracts/workflow/workflow';
 import { DeviceActivationPolicy } from '@shared/contracts/device/device-activation';
 import { BASE_URL_SHARED } from '@shared/config';
 import { Order, OrderSellDeviceRequest } from '@shared/contracts/sale/order';
+import { Protocol } from '@shared/contracts/versioning/protocol';
+import { Firmware } from '@shared/contracts/versioning/firmware';
+import { Application } from '@shared/contracts/versioning/application';
+import { Vehicle } from '@shared/contracts/vehicle';
 
 @Injectable({
     providedIn: 'root'
@@ -69,5 +73,37 @@ export class DeviceRepository extends BaseCrudRepository<Device, DeviceSaveReque
 
     sell(id: string, req: OrderSellDeviceRequest) {
         return this.http.post<QueryResult<Order>>(`${id}/Sell`, req);
+    }
+    
+    getOwnById(id: string) {
+        return this.http.get<QueryResult>(`${id}`);
+    }
+
+    getAllFirmware(id: string, req: DeviceGetByPolicyRequest) {
+        return this.http.get<QueryResult<Firmware[]>>(`${id}/Firmwares`, {params: {...req}});
+    }
+
+    getAllApplication(id: string, req: DeviceGetByPolicyRequest) {
+        return this.http.get<QueryResult<Application[]>>(`${id}/Applications`, {params: {...req}});
+    }
+
+    getAllProtocol(id: string, req: DeviceGetByPolicyRequest) {
+        return this.http.get<QueryResult<Protocol[]>>(`${id}/Protocols`, {params: {...req}});
+    }
+
+    getConnectedVehicle(id: string) {
+        return this.http.get<QueryResult<Vehicle>>(`${id}/ConnectedVehicle`);
+    }
+
+    setConnectedVehicle(id: string, vehicleId: string) {
+        return this.http.patch<QueryResult<Vehicle>>(`${id}/ConnectedVehicle/${vehicleId}`, {});
+    }
+
+    transitionOwnById(id: string, req: WorkflowTransitionRequest) {
+        return this.http.post<QueryResult>(`${id}`, req);
+    }
+
+    activeByPassword(req: any) {
+        return this.http.post<QueryResult>('ActiveByPassword', req)
     }
 }

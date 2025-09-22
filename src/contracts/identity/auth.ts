@@ -8,8 +8,8 @@ import { UserDto } from "./user";
 import { WorkflowStateDesignInfo, WorkflowTransitionDesignInfo } from "../workflow/workflow";
 
 export interface AuthLoginRequest {
-    tokenTimeToLiveInMinutes: number;
-    rememberMe: boolean;
+    tokenTimeToLiveInMinutes?: number;
+    rememberMe?: boolean;
 }
 
 export interface AuthLoginWithPasswordRequest extends AuthLoginRequest {
@@ -142,7 +142,7 @@ export interface AuthOrganization {
 
 export interface AuthHardware {
     id: string;
-    name: string;
+    version: string;
 }
 
 export interface AuthUser {

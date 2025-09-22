@@ -4,7 +4,7 @@ import { UserDevices } from '../../contracts/identity/user';
 import { BaseCrudRepository } from "@framework/repositories";
 import { Device, DeviceAddBulkRequest, DeviceDto, DeviceGetByPolicyRequest, DeviceSaveRequest } from '@shared/contracts/device/device';
 import { CommandResult } from "@framework/contracts/results";
-import { DevicesWorkflowTransitionSaveRequest, WorkflowTransition, WorkflowTransitionLog } from '@shared/contracts/workflow/workflow';
+import { WorkflowTransitionRequest, WorkflowTransition, WorkflowTransitionLog } from '@shared/contracts/workflow/workflow';
 import { DeviceActivationPolicy } from '@shared/contracts/device/device-activation';
 import { BASE_URL_SHARED } from '@shared/config';
 import { Order, OrderSellDeviceRequest } from '@shared/contracts/sale/order';
@@ -46,7 +46,7 @@ export class DeviceRepository extends BaseCrudRepository<Device, DeviceSaveReque
         return this.http.get<QueryResult<WorkflowTransition[]>>(`${id}/Transitions`);
     }
 
-    transition(id: string, req: DevicesWorkflowTransitionSaveRequest) {
+    transition(id: string, req: WorkflowTransitionRequest) {
         return this.http.post<QueryResult<Device>>(`${id}/Transition`, req);
     }
 
@@ -100,7 +100,7 @@ export class DeviceRepository extends BaseCrudRepository<Device, DeviceSaveReque
     }
 
     transitionOwnById(id: string, req: WorkflowTransitionRequest) {
-        return this.http.post<QueryResult>(`${id}`, req);
+        return this.http.post<QueryResult>(`${id}/Transition`, req);
     }
 
     activeByPassword(req: any) {

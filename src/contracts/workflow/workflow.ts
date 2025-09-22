@@ -88,7 +88,7 @@ export interface WorkflowTransition extends FullEntity {
     destinationState?: WorkflowState;
 }
 
-export interface DevicesWorkflowTransitionSaveRequest {
+export interface WorkflowTransitionRequest {
     id: string
     transitionId: string
     data: string

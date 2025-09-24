@@ -8,9 +8,9 @@ export interface Token {
     expireTime: string
     terminateTime: string
     status: TokenStatus
-    clientInfo: TokenClientInfo
     creationTime: string
-    user: User
+    clientInfo?: TokenClientInfo
+    user?: User
 }
 export enum TokenStatus {
     Active = 0,

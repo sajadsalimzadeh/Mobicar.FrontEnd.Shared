@@ -160,6 +160,10 @@ export class AuthRepository extends BaseApiRepository {
         return this.http.get<QueryResult<AuthLoginInfo>>(`${organizationId ? `?organizationId=${organizationId}` : ''}`).pipe(this.tapLoginInfo());
     }
 
+    refreshToken() {
+        return this.http.post<QueryResult<AuthLoginResponse>>(`RefreshToken`, {});
+    }
+
     loginWithPassword(req: AuthLoginWithPasswordRequest, captcha: CaptchaValidateRequest) {
         return this.http.post<QueryResult<AuthLoginResponse>>(`LoginWithPassword`, req, {
             headers: {

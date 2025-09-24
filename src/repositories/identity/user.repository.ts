@@ -122,4 +122,8 @@ export class UserRepository extends BaseCrudRepository<User> {
     setOwnWebPushSubscription(req: UserPushSubscriptionRequest) {
         return this.http.post<QueryResult>(`Own/WebPushSubscription`, req)
     }
+    
+    getAllOwnTokens() {
+        return this.http.get<QueryResult<Token[]>>(`Own/Tokens`)
+    }
 }

@@ -92,5 +92,5 @@ export interface OrderSellDeviceRequest {
 
 export interface OrderSalePackageSellRequest {
     id: string;
-    deviceActivationUserSelect?: DeviceActivationSelector;
+    deviceActivationUserSelects?: DeviceActivationSelector[];
 }

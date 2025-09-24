@@ -7,13 +7,13 @@ import { DeviceActivationSelector } from "../device/device-activation";
 export interface SalePackageAccess {
     id: string;
     name: string;
-    duration: string;
+    duration: number;
     privileges: Privilege[];
 }
 
 export interface SalePackageDeviceActivation {
     name?: string;
-    duration?: string;
+    duration?: number;
     selector: DeviceActivationSelector;
 }
 
@@ -55,7 +55,8 @@ export interface SalePackage {
 
 export interface SalePackageDeviceActivationUserSelect {
     isEnable: boolean;
-    duration: string;
+    duration: number;
+    count: number;
     companies: string[];
 }
 

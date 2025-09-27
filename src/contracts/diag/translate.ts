@@ -31,6 +31,10 @@ export interface DiagDtcTranslateRequest {
     encryptedCodes: string[];
 }
 
+export interface DiagTranslateRequestRecord extends DiagDtcTranslateRequest {
+    id: number;
+}
+
 export interface DiagDtcTranslateResponse {
     encryptedCode: string;
     code: string;

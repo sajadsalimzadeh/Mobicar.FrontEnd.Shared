@@ -141,3 +141,8 @@ export interface WorkflowTransitionLog extends FullEntity {
     transition?: WorkflowTransition;
 }
 
+export interface WorkflowTransitionRequest {
+    entityId: string;
+    transitionId: string;
+    data: string;
+}

@@ -13,13 +13,12 @@ export interface TracingLog {
 }
 
 export interface TracingLogSaveRequest {
-    id: string
-    userId: string
-    serial: string
-    date: string
-    filename: string
-    appVersion: string
-    protocolVersion: string
-    Firmware: string
-    user: User
+    username: string;
+    serial: string;
+    date: string;
+    appVersion: string;
+    contents: string[];
+    
+    protocolVersion?: string;
+    firmwareVersion?: string;
 }

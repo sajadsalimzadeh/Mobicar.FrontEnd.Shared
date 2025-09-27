@@ -4,14 +4,13 @@ import { UserDevices } from '../../contracts/identity/user';
 import { BaseCrudRepository } from "@framework/repositories";
 import { Device, DeviceAddBulkRequest, DeviceDto, DeviceGetByPolicyRequest, DeviceSaveRequest } from '@shared/contracts/device/device';
 import { CommandResult } from "@framework/contracts/results";
-import { DevicesWorkflowTransitionSaveRequest, WorkflowTransition, WorkflowTransitionLog } from '@shared/contracts/workflow/workflow';
+import { DevicesWorkflowTransitionSaveRequest, WorkflowTransition, WorkflowTransitionLog, WorkflowTransitionRequest } from '@shared/contracts/workflow/workflow';
 import { DeviceActivationPolicy } from '@shared/contracts/device/device-activation';
 import { BASE_URL_SHARED } from '@shared/config';
 import { Protocol } from '@shared/contracts/versioning/protocol';
 import { Firmware } from '@shared/contracts/versioning/firmware';
 import { Application } from '@shared/contracts/versioning/application';
 import { Vehicle } from '@shared/contracts/vehicle';
-import { WorkflowTransitionRequest } from '@app/_contracts/workflow';
 
 @Injectable({
     providedIn: 'root'
@@ -95,8 +94,8 @@ export class DeviceRepository extends BaseCrudRepository<Device, DeviceSaveReque
         return this.http.patch<QueryResult<Vehicle>>(`${id}/ConnectedVehicle/${vehicleId}`, {});
     }
 
-    transitionOwnById(req: WorkflowTransitionRequest) {
-        return this.http.post<QueryResult>(`${req.id}`, req);
+    transitionOwnById(id: string, req: WorkflowTransitionRequest) {
+        return this.http.post<QueryResult>(`${id}/Transition`, req);
     }
 
     activeByPassword(req: any) {

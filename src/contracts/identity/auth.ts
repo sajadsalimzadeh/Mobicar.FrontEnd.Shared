@@ -9,7 +9,6 @@ import { WorkflowStateDesignInfo, WorkflowTransitionDesignInfo } from "../workfl
 
 export interface AuthLoginRequest {
     tokenTimeToLiveInMinutes?: number;
-    rememberMe?: boolean;
 }
 
 export interface AuthLoginWithPasswordRequest extends AuthLoginRequest {
@@ -24,9 +23,9 @@ export interface AuthLoginWithOtpRequest extends AuthLoginRequest {
 }
 
 export interface AuthRegisterRequest {
-    name: string;
     cellphone: string;
     otpCode: string;
+    name?: string;
     gender?: Gender;
     password?: string;
     nationalCode?: string;

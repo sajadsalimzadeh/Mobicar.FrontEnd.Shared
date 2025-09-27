@@ -4,9 +4,10 @@ import { UserDevices } from '../../contracts/identity/user';
 import { BaseCrudRepository } from "@framework/repositories";
 import { Device, DeviceAddBulkRequest, DeviceDto, DeviceGetByPolicyRequest, DeviceSaveRequest } from '@shared/contracts/device/device';
 import { CommandResult } from "@framework/contracts/results";
-import { DevicesWorkflowTransitionSaveRequest, WorkflowTransition, WorkflowTransitionLog, WorkflowTransitionRequest } from '@shared/contracts/workflow/workflow';
+import { WorkflowTransition, WorkflowTransitionLog, WorkflowTransitionRequest } from '@shared/contracts/workflow/workflow';
 import { DeviceActivationPolicy } from '@shared/contracts/device/device-activation';
 import { BASE_URL_SHARED } from '@shared/config';
+import { Order, OrderSellDeviceRequest } from '@shared/contracts/sale/order';
 import { Protocol } from '@shared/contracts/versioning/protocol';
 import { Firmware } from '@shared/contracts/versioning/firmware';
 import { Application } from '@shared/contracts/versioning/application';
@@ -45,7 +46,7 @@ export class DeviceRepository extends BaseCrudRepository<Device, DeviceSaveReque
         return this.http.get<QueryResult<WorkflowTransition[]>>(`${id}/Transitions`);
     }
 
-    transition(id: string, req: DevicesWorkflowTransitionSaveRequest) {
+    transition(id: string, req: WorkflowTransitionRequest) {
         return this.http.post<QueryResult<Device>>(`${id}/Transition`, req);
     }
 
@@ -70,6 +71,10 @@ export class DeviceRepository extends BaseCrudRepository<Device, DeviceSaveReque
         return this.http.delete<CommandResult>(`${deviceId}/ActivationPolicies/${id}`);
     }
 
+    sell(id: string, req: OrderSellDeviceRequest) {
+        return this.http.post<QueryResult<Order>>(`${id}/Sell`, req);
+    }
+    
     getOwnById(id: string) {
         return this.http.get<QueryResult>(`${id}`);
     }

@@ -14,4 +14,7 @@ export class TokenRepository extends BaseApiRepository {
         return this.http.delete<QueryResult>(`${id}/Terminate`)
     }
 
+    terminateOwn(id: any) {
+        return this.http.delete<QueryResult>(`Own/${id}/Terminate`)
+    }
 }

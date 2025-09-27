@@ -1,6 +1,8 @@
 import { CreateEntity } from "@framework/contracts";
 
 export interface DeviceActivationSelector {
+    name?: string | null;
+
     protocolVersion?: string | null,
     companyCode?: string | null,
     ecuTypeCode?: string | null,

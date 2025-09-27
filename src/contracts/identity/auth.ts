@@ -40,6 +40,7 @@ export interface AuthForgetPasswordRequest {
 
 export interface AuthLoginResponse {
     accessToken: string;
+    expires: string;
     isNeedTwoFactorAuthentication: boolean;
 }
 

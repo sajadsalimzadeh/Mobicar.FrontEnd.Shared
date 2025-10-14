@@ -1,6 +1,6 @@
 import { Injectable, Injector } from "@angular/core";
 import { BASE_URL_SHARED } from "../config";
-import { DashboardAdminResponse, DashboardAgentResponse, DashboardDeviceResponse, DashboardFinanceResponse, DashboardSaleResponse } from "@core/contracts/dashboard";
+import { DashboardAdminResponse, DashboardAgentResponse, DashboardDeviceResponse, DashboardFinanceResponse, DashboardSaleResponse } from "../contracts/dashboard";
 import { QueryResult } from "@framework/contracts";
 import { BaseApiRepository } from "@framework/repositories";
 

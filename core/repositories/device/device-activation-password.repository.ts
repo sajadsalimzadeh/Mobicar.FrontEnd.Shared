@@ -1,7 +1,7 @@
 import { Injectable, Injector } from '@angular/core';
 import { BASE_URL_SHARED } from "../../config";
 import { BaseCrudRepository } from "@framework/repositories";
-import { DeviceActivationPassword, DeviceActivationPasswordResetRequest, DeviceActivationPasswordSaveRequest } from '@core/contracts/device/device-activation-password';
+import { DeviceActivationPassword, DeviceActivationPasswordResetRequest, DeviceActivationPasswordSaveRequest } from '../../contracts/device/device-activation-password';
 import { CommandResult } from '@framework/contracts';
 
 

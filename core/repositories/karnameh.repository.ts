@@ -1,8 +1,8 @@
 import { Injectable, Injector } from "@angular/core";
 import { BaseApiRepository } from "@framework/repositories";
-import { BASE_URL_SHARED } from "@core/config";
-import { KarnamehBodyStatusDto, KarnamehCarPriceEstimateResponse, KarnamehColorDto, KarnamehVehicleDto } from "@core/contracts/karnameh";
-import { KarnamehCarPriceEstimateRequest } from "@core/contracts/karnameh";
+import { BASE_URL_SHARED } from "../config";
+import { KarnamehBodyStatusDto, KarnamehCarPriceEstimateResponse, KarnamehColorDto, KarnamehVehicleDto } from "../contracts/karnameh";
+import { KarnamehCarPriceEstimateRequest } from "../contracts/karnameh";
 
 @Injectable({
     providedIn: 'root'

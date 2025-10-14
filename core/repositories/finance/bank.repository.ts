@@ -2,7 +2,7 @@
 import { Injectable, Injector } from '@angular/core';
 import { BASE_URL_SHARED } from "../../config";
 import { BaseCrudRepository } from '@framework/repositories';
-import { Bank } from '@core/contracts/finance/bank';
+import { Bank } from '../../contracts/finance/bank';
 
 
 @Injectable({

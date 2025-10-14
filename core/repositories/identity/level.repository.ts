@@ -1,7 +1,7 @@
 import { Injectable, Injector } from '@angular/core';
-import { BaseApiRepository, BaseCrudRepository } from "@framework/repositories";
-import { Level } from '@core/contracts/identity/level';
-import { BASE_URL_SHARED } from '@core/config';
+import { BaseCrudRepository } from "@framework/repositories";
+import { Level } from '../../contracts/identity/level';
+import { BASE_URL_SHARED } from '../../config';
 
 @Injectable({ providedIn: 'root' })
 export class LevelRepository extends BaseCrudRepository<Level, any> {

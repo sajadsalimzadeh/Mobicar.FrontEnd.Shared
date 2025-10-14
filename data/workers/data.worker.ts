@@ -1,11 +1,11 @@
 import { Injectable, Injector } from '@angular/core';
 import { HttpErrorResponse } from "@angular/common/http";
-import { dataStore } from '@data/stores/data.store';
+import { dataStore } from '../../data/stores/data.store';
 import { internetStateService } from '@framework/services/internet-state.service';
-import { IngestRepository } from '@data/repositories/ingest.repository';
+import { IngestRepository } from '../../data/repositories/ingest.repository';
 import { WorkerWithInterval } from '@framework/services/worker.service';
-import { DtcRepository } from '@core/repositories/dtc.repository';
-import { BaseDataEntity } from '@data/contracts/entity';
+import { DtcRepository } from '../../core/repositories/dtc.repository';
+import { BaseDataEntity } from '../../data/contracts/entity';
 import { delay, ITable } from '@framework/utils';
 
 @Injectable({ providedIn: 'root' })
@@ -37,9 +37,9 @@ export class DataIngestionBackgroundService extends WorkerWithInterval {
                 error: async (e: any) => {
                     requestCounter--;
                     if (e instanceof HttpErrorResponse && e.status > 0) {
-                        
+
                         this.retyingCounter[name]++;
-                        if(this.retyingCounter[name] > 5) {
+                        if (this.retyingCounter[name] > 5) {
                             await table.delete(entities[0].id);
                         }
                     }
@@ -124,6 +124,6 @@ export class DataIngestionBackgroundService extends WorkerWithInterval {
         } catch {
         }
 
-        while(requestCounter > 0) await delay(1000);
+        while (requestCounter > 0) await delay(1000);
     }
 }

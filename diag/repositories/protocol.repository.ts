@@ -1,10 +1,10 @@
 import {Injectable, Injector} from '@angular/core';
 import {QueryResult} from '@framework/contracts';
-import {ProtocolManifest} from '@diag/contracts/manifest';
-import { ProtocolVersion } from '@diag/contracts/protocolVersion';
-import { VehicleTree } from '@diag/contracts/vehicle-tree';
+import {ProtocolManifest} from '../contracts/manifest';
+import { ProtocolVersion } from '../contracts/protocolVersion';
+import { VehicleTree } from '../contracts/vehicle-tree';
 import { BaseApiRepository } from '@framework/repositories';
-import { EcuType } from '@diag/contracts/ecu-type';
+import { EcuType } from '../contracts/ecu-type';
 import { BASE_URL_DIAG } from '../config';
 
 

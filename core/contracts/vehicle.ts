@@ -1,6 +1,6 @@
 import { FullEntity } from "@framework/contracts";
-import { Color } from "@core/contracts/color";
-import { User } from "@core/contracts/identity/user";
+import { Color } from "./color";
+import { User } from "./identity/user";
 
 export interface Vehicle extends FullEntity {
     userId: string;

@@ -1,7 +1,7 @@
 import { Injectable, Injector } from '@angular/core';
 import { BASE_URL_SHARED } from "../../config";
 import { BaseCrudRepository } from "@framework/repositories";
-import { Withdraw, WithdrawCancelRequest } from '@core/contracts/finance/withdraw';
+import { Withdraw, WithdrawCancelRequest } from '../../contracts/finance/withdraw';
 import { QueryResult } from '@framework/contracts';
 
 @Injectable({

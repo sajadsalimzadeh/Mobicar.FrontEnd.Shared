@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable, Injector } from "@angular/core";
 import { BASE_URL_SHARED } from "../../config";
-import { Currency } from "@core/contracts/finance/wallet";
+import { Currency } from "../../contracts/finance/wallet";
 import { QueryResult } from "@framework/contracts";
 import { BaseApiRepository } from "@framework/repositories";
 

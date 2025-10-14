@@ -1,8 +1,8 @@
 
 import { Injectable, Injector } from '@angular/core';
 import { BASE_URL_SHARED } from "../../config";
-import { Clearance, ClearanceAddRequest, ClearancePayRequest } from '@core/contracts/finance/clearance';
-import { Withdraw } from '@core/contracts/finance/withdraw';
+import { Clearance, ClearanceAddRequest, ClearancePayRequest } from '../../contracts/finance/clearance';
+import { Withdraw } from '../../contracts/finance/withdraw';
 import { QueryResult } from '@framework/contracts';
 import { BaseApiRepository } from '@framework/repositories';
 

@@ -1,7 +1,7 @@
 import { Injectable, Injector } from '@angular/core';
 import { BASE_URL_SHARED } from "../../config";
 import { BaseCrudRepository } from "@framework/repositories";
-import { DeviceGroup, DeviceGroupSaveRequest } from '@core/contracts/device/device-group';
+import { DeviceGroup, DeviceGroupSaveRequest } from '../../contracts/device/device-group';
 
 
 @Injectable({

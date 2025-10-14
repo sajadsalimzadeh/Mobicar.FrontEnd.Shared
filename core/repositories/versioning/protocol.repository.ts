@@ -1,6 +1,6 @@
 import {Injectable, Injector} from '@angular/core';
 import {BaseCrudRepository} from "@framework/repositories";
-import { Protocol, ProtocolSaveRequest } from '@core/contracts/versioning/protocol';
+import { Protocol, ProtocolSaveRequest } from '@shared/core/contracts/versioning/protocol';
 import { BASE_URL_SHARED } from "../../config";
 
 

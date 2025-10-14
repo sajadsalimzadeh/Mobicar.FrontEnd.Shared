@@ -1,7 +1,8 @@
 import {Injectable, Injector} from '@angular/core';
 import { BASE_URL_SHARED } from "../../config";
-import {BaseApiRepository, BaseCrudRepository} from "@framework/repositories";
-import { TracingLog, TracingLogSaveRequest } from '@core/contracts/logs/tracing-log';
+import {BaseApiRepository} from "@framework/repositories";
+import { TracingLog, TracingLogSaveRequest } from '../../contracts/logs/tracing-log';
+import { QueryResult } from '@framework/contracts';
 
 
 @Injectable({
@@ -11,6 +12,10 @@ export class TracingLogRepository extends BaseApiRepository {
 
     constructor(injector: Injector) {
         super(injector, injector.get(BASE_URL_SHARED), 'TracingLogs');
+    }
+
+    getAll() {
+        return this.http.get<QueryResult<TracingLog[]>>('');
     }
 
     add(data: TracingLogSaveRequest) {

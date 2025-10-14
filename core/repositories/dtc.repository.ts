@@ -3,7 +3,7 @@ import { BASE_URL_SHARED } from "../config";
 import { UnknwonDtcDto as DtcUnknwonDto } from "../contracts/unknown-dtc";
 import { PagedListResult, QueryResult } from "@framework/contracts";
 import { BaseApiRepository } from "@framework/repositories";
-import { DtcTranslateRequest, DtcTranslateResponse } from "@diag/contracts/translate";
+import { DtcTranslateRequest, DtcTranslateResponse } from "@shared/diag/contracts/translate";
 
 @Injectable({
     providedIn: 'root'

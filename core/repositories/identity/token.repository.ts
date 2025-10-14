@@ -1,7 +1,7 @@
 import { Injectable, Injector } from '@angular/core';
 import { BaseApiRepository } from "@framework/repositories";
 import { QueryResult } from '@framework/contracts';
-import { BASE_URL_SHARED } from '@core/config';
+import { BASE_URL_SHARED } from '../../config';
 
 @Injectable({ providedIn: 'root' })
 export class TokenRepository extends BaseApiRepository {

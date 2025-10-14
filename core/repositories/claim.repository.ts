@@ -1,7 +1,7 @@
 import {Injectable, Injector} from '@angular/core';
 import { BASE_URL_SHARED } from "../config";
 import {BaseCrudRepository} from "@framework/repositories";;
-import { Claim, ClaimSaveRequest } from '@core/contracts/claim';
+import { Claim, ClaimSaveRequest } from '../contracts/claim';
 
 
 @Injectable({

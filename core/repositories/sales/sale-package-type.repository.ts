@@ -1,7 +1,7 @@
 import {Injectable, Injector} from '@angular/core';
 import { BASE_URL_SHARED } from "../../config";
 import {BaseCrudRepository} from "@framework/repositories";
-import { SalePackageType, SalePackageTypeSaveRequest } from '@core/contracts/sale/sale-package';
+import { SalePackageType, SalePackageTypeSaveRequest } from '../../contracts/sale/sale-package';
 
 
 @Injectable({

@@ -1,7 +1,7 @@
 import {Injectable, Injector} from '@angular/core';
 import { BASE_URL_SHARED } from "../../config";
 import {BaseCrudRepository} from "@framework/repositories";
-import {WorkflowTransition, WorkflowTransitionFunctionHandlerDto} from "@core/contracts/workflow/workflow";
+import {WorkflowTransition, WorkflowTransitionFunctionHandlerDto} from "@shared/core/contracts/workflow/workflow";
 import { QueryResult } from '@framework/contracts';
 
 

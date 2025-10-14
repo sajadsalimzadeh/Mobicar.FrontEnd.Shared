@@ -1,5 +1,5 @@
 import { Injectable, Injector } from '@angular/core';
-import { AntiTheft, AntiTheftSaveRequest } from '@core/contracts/anti-theft';
+import { AntiTheft, AntiTheftSaveRequest } from '../../contracts/anti-theft';
 import { BaseCrudRepository } from '@framework/repositories';
 import { BASE_URL_SHARED } from '../../config';
 

@@ -2,7 +2,7 @@ import { Injectable, Injector } from '@angular/core';
 import { QueryResult } from '@framework/contracts';
 import { Wallet, WalletChargeRequest, PaymentGatewayChargeResponse } from '../../contracts/finance/wallet';
 import { BASE_URL_SHARED } from "../../config";
-import { Transaction } from '@core/contracts/finance/transaction';
+import { Transaction } from '../../contracts/finance/transaction';
 import { BaseApiRepository } from '@framework/repositories';
 
 

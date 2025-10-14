@@ -1,8 +1,8 @@
 import { Injectable, Injector } from '@angular/core';
 import { BaseApiRepository } from "@framework/repositories";
 import { CommandResult, QueryResult } from "@framework/contracts";
-import { Otp, OtpSendRequest } from "@core/contracts/identity/otp";
-import { BASE_URL_SHARED } from '@core/config';
+import { Otp, OtpSendRequest } from '../../contracts/identity/otp';
+import { BASE_URL_SHARED } from '../../config';
 
 @Injectable({ providedIn: 'root' })
 

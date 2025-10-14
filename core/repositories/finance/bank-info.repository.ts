@@ -1,7 +1,7 @@
 import { Injectable, Injector } from '@angular/core';
 import { BASE_URL_SHARED } from "../../config";
 import { BaseCrudRepository } from "@framework/repositories";
-import { BankInfo, BankInfoStatus } from "@core/contracts/finance/bank-info";
+import { BankInfo, BankInfoStatus } from "../../contracts/finance/bank-info";
 import { QueryResult } from '@framework/contracts';
 
 @Injectable({

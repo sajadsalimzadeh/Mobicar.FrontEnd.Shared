@@ -1,7 +1,7 @@
 import {Injectable, Injector} from '@angular/core';
 import { BASE_URL_SHARED } from "../config";
 import {BaseCrudRepository} from "@framework/repositories";;
-import { MessageDto } from '@core/contracts/message';
+import { MessageDto } from '../contracts/message';
 
 
 @Injectable({

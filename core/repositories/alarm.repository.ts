@@ -1,6 +1,6 @@
 import { Injectable, Injector } from "@angular/core";
 import { BaseCrudRepository } from "@framework/repositories";
-import { AlaramSaveRequest, Alarm } from "@core/contracts/alarm";
+import { AlaramSaveRequest, Alarm } from "../contracts/alarm";
 import { BASE_URL_SHARED } from "../config";
 
 @Injectable({

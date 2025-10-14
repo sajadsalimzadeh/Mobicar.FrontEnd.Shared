@@ -1,7 +1,7 @@
 
 import { Injectable, Injector } from '@angular/core';
 import { BASE_URL_SHARED } from "../../config";
-import { Commission } from '@core/contracts/finance/commission';
+import { Commission } from '../../contracts/finance/commission';
 import { CommandResult, QueryResult } from '@framework/contracts';
 import { BaseCrudRepository } from '@framework/repositories';
 

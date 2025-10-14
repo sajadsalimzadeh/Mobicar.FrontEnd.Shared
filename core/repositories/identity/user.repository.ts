@@ -3,16 +3,14 @@ import { CommandResult, QueryResult } from '@framework/contracts';
 import { User, UserActivity, UserAgentInfo, UserAgentInfoEditRequest, UserCustomer, UserDto, UserEditOwnRequest, UserInquiryResponse, UserMember, UserPrivilege, UserPushSubscriptionRequest, UserResetPasswordRequest, UserSearchRequest as UserSearchRequest, UserSendNotificationRequest, UserStatus } from '../../contracts/identity/user';
 import { BASE_URL_SHARED } from "../../config";
 import { BaseCrudRepository } from "@framework/repositories";
-import { Vehicle } from "@core/contracts/vehicle";
-import { Token } from '@core/contracts/identity/token';
-import { AuthEntity, AuthEntityAccess, AuthEntityAccessItem, AuthLoginInfo, AuthLoginResponse } from "@core/contracts/identity/auth";
-import { map, tap } from "rxjs/operators";
-import { AccessRepository } from "@core/repositories/identity/access.repository";
-import { MessageDto } from '@core/contracts/message';
-import { Wallet } from '@core/contracts/finance/wallet';
-import { Organization } from '@core/contracts/organization/organization';
+import { Vehicle } from "../../contracts/vehicle";
+import { Token } from '../../contracts/identity/token';
+import { AuthLoginInfo, AuthLoginResponse } from "../../contracts/identity/auth";
+import { MessageDto } from '../../contracts/message';
+import { Wallet } from '../../contracts/finance/wallet';
+import { Organization } from '../../contracts/organization/organization';
 import { AuthRepository } from './auth.repository';
-import { BankInfo } from '@core/contracts/finance/bank-info';
+import { BankInfo } from '../../contracts/finance/bank-info';
 
 @Injectable({
     providedIn: 'root'

@@ -1,6 +1,6 @@
 import { Injectable, Injector } from "@angular/core";
 import { BASE_URL_SHARED } from "../../config";
-import { Order, OrderSellDeviceRequest } from "@core/contracts/sale/order";
+import { Order, OrderSellDeviceRequest } from "../../contracts/sale/order";
 import { QueryResult } from "@framework/contracts";
 import { Attachment } from "@framework/contracts/attachment";
 import { BaseCrudRepository } from "@framework/repositories";

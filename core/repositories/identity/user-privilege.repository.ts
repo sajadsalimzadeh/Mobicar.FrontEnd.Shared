@@ -1,7 +1,7 @@
 import {Injectable, Injector} from '@angular/core';
 import {BaseCrudRepository} from "@framework/repositories";
-import {UserPrivilege} from "@core/contracts/identity/user";
-import { BASE_URL_SHARED } from '@core/config';
+import {UserPrivilege} from "../../contracts/identity/user";
+import { BASE_URL_SHARED } from '../../config';
 
 @Injectable({providedIn: 'root'})
 export class UserPrivilegeRepository extends BaseCrudRepository<UserPrivilege, any> {

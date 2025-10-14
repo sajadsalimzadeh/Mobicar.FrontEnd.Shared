@@ -2,16 +2,16 @@ import { Injectable, Injector } from '@angular/core';
 import { QueryResult } from '@framework/contracts';
 import { UserDevices } from '../../contracts/identity/user';
 import { BaseCrudRepository } from "@framework/repositories";
-import { Device, DeviceAddBulkRequest, DeviceDto, DeviceGetByPolicyRequest, DeviceSaveRequest } from '@core/contracts/device/device';
+import { Device, DeviceAddBulkRequest, DeviceDto, DeviceGetByPolicyRequest, DeviceSaveRequest } from '../../contracts/device/device';
 import { CommandResult } from "@framework/contracts/results";
-import { WorkflowTransition, WorkflowTransitionLog, WorkflowTransitionRequest } from '@core/contracts/workflow/workflow';
-import { DeviceActivationPolicy } from '@core/contracts/device/device-activation';
-import { BASE_URL_SHARED } from '@core/config';
-import { Order, OrderSellDeviceRequest } from '@core/contracts/sale/order';
-import { Protocol } from '@core/contracts/versioning/protocol';
-import { Firmware } from '@core/contracts/versioning/firmware';
-import { Application } from '@core/contracts/versioning/application';
-import { Vehicle } from '@core/contracts/vehicle';
+import { WorkflowTransition, WorkflowTransitionLog, WorkflowTransitionRequest } from '../../contracts/workflow/workflow';
+import { DeviceActivationPolicy } from '../../contracts/device/device-activation';
+import { BASE_URL_SHARED } from '../../config';
+import { Order, OrderSellDeviceRequest } from '../../contracts/sale/order';
+import { Protocol } from '../../contracts/versioning/protocol';
+import { Firmware } from '../../contracts/versioning/firmware';
+import { Application } from '../../contracts/versioning/application';
+import { Vehicle } from '../../contracts/vehicle';
 
 @Injectable({
     providedIn: 'root'

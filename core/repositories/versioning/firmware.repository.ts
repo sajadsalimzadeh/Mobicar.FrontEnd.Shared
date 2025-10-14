@@ -1,7 +1,7 @@
 import { Injectable, Injector } from '@angular/core';
 import { BASE_URL_SHARED } from "../../config";
 import { BaseCrudRepository } from "@framework/repositories";
-import { Firmware, FirmwareSaveRequest } from '@core/contracts/versioning/firmware';
+import { Firmware, FirmwareSaveRequest } from '../../contracts/versioning/firmware';
 
 
 @Injectable({

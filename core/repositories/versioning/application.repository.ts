@@ -1,7 +1,7 @@
 import {Injectable, Injector} from '@angular/core';
 import { BASE_URL_SHARED } from "../../config";
 import {BaseCrudRepository} from "@framework/repositories";
-import { Application, ApplicationSaveRequest } from '@core/contracts/versioning/application';
+import { Application, ApplicationSaveRequest } from '../../contracts/versioning/application';
 
 
 @Injectable({

@@ -11,14 +11,14 @@ import { Dynamic } from '@data/contracts/dynamic';
 
 
 export const dataStore = new class TripStore {
-    db = new StoreDb('data-v2', 2, {
-        alarms: { key: 'id' },
-        trips: { key: 'id' },
-        parameters: { key: 'id' },
-        locations: { key: 'id' },
-        diagnostics: { key: 'id' },
-        testResults: { key: 'id' },
-        ThirdPartyDatas: { key: 'id' },
+    db = new StoreDb('data-v2', 4, {
+        alarms: { key: 'id', autoIncrement: true },
+        trips: { key: 'id', autoIncrement: true },
+        parameters: { key: 'id', autoIncrement: true },
+        locations: { key: 'id', autoIncrement: true },
+        diagnostics: { key: 'id', autoIncrement: true },
+        ThirdPartyDatas: { key: 'id', autoIncrement: true },
+        dynamics: { key: 'id', autoIncrement: true },
         dtcTranslateRequests: { key: 'id', autoIncrement: true },
     });
 
@@ -42,8 +42,8 @@ export const dataStore = new class TripStore {
         return this.db.getTable<Diagnostic, string>('diagnostics');
     }
 
-    get testResults(): ITable<Dynamic, string> {
-        return this.db.getTable<Dynamic, string>('testResults');
+    get dynamics(): ITable<Dynamic, string> {
+        return this.db.getTable<Dynamic, string>('dynamics');
     }
 
     get ThirdPartyDatas(): ITable<ThirdPartyData, string> {

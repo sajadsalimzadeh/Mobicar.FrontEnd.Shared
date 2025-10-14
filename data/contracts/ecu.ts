@@ -8,7 +8,7 @@ export interface EcuDtcItem {
 export interface EcuParameterItem {
     timestamp: number;
     label: string;
-    value: string;
+    value: number;
 }
 
 export interface EcuInfoItem {

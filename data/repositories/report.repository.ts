@@ -22,71 +22,157 @@ export class ReportRepository extends BaseApiRepository {
 
     //===================== Device =====================\\
     getAllAlarmByDeviceId(deviceId: string, from: string, to: string) {
-        return this.http.get<QueryResult<Alarm>>(`ByDeviceId/${deviceId}/Alarms/${from}/${to}`);
+        return this.http.get<QueryResult<Alarm>>(`ByDeviceId/${deviceId}/Alarms`, {
+            params: {
+                from: from,
+                to: to
+            }
+        });
     }
 
     getAllDynamicsByDeviceId(deviceId: string, type: DynamicType, from: string, to: string) {
-        return this.http.get<QueryResult<Dynamic>>(`ByDeviceId/${deviceId}/Dynamics/${type}/${from}/${to}`);
+        return this.http.get<QueryResult<Dynamic>>(`ByDeviceId/${deviceId}/Dynamics`, {
+            params: {
+                type: type,
+                from: from,
+                to: to
+            }
+        });
     }
 
     getAllThirdPartyDataByDeviceId(deviceId: string, from: string, to: string) {
-        return this.http.get<QueryResult<ThirdPartyData>>(`ByDeviceId/${deviceId}/ThirdPartyDatas/${from}/${to}`);
+        return this.http.get<QueryResult<ThirdPartyData>>(`ByDeviceId/${deviceId}/ThirdPartyDatas`, {
+            params: {
+                from: from,
+                to: to
+            }
+        });
     }
 
     getAllDiagnosticByDeviceId(deviceId: string, from: string, to: string) {
-        return this.http.get<QueryResult<Diagnostic[]>>(`ByDeviceId/${deviceId}/Diagnostics/${from}/${to}`);
+        return this.http.get<QueryResult<Diagnostic[]>>(`ByDeviceId/${deviceId}/Diagnostics`, {
+            params: {
+                from: from,
+                to: to
+            }
+        });
     }
 
     getAllTripByDeviceId(deviceId: string, from: string, to: string) {
-        return this.http.get<QueryResult<Trip>>(`ByDeviceId/${deviceId}/Trips/${from}/${to}`);
+        return this.http.get<QueryResult<Trip>>(`ByDeviceId/${deviceId}/Trips`, {
+            params: {
+                from: from,
+                to: to
+            }
+        });
     }
 
     getAllLocationByDeviceId(deviceId: string, from: string, to: string) {
-        return this.http.get<QueryResult<TripLocation>>(`ByDeviceId/${deviceId}/TripLocations/${from}/${to}`);
+        return this.http.get<QueryResult<TripLocation>>(`ByDeviceId/${deviceId}/TripLocations`, {
+            params: {
+                from: from,
+                to: to
+            }
+        });
     }
 
     getAllMotionByDeviceId(deviceId: string, from: string, to: string) {
-        return this.http.get<QueryResult<TripMotion>>(`ByDeviceId/${deviceId}/TripMotions/${from}/${to}`);
+        return this.http.get<QueryResult<TripMotion>>(`ByDeviceId/${deviceId}/TripMotions`, {
+            params: {
+                from: from,
+                to: to
+            }
+        });
     }
 
     getAllSensorByDeviceId(deviceId: string, from: string, to: string) {
-        return this.http.get<QueryResult<TripSensor>>(`ByDeviceId/${deviceId}/TripSensors/${from}/${to}`);
+        return this.http.get<QueryResult<TripSensor>>(`ByDeviceId/${deviceId}/TripSensors`, {
+            params: {
+                from: from,
+                to: to
+            }
+        });
     }
 
     getAllParameterByDeviceId(deviceId: string, from: string, to: string) {
-        return this.http.get<QueryResult<TripParameter>>(`ByDeviceId/${deviceId}/TripParameters/${from}/${to}`);
+        return this.http.get<QueryResult<TripParameter>>(`ByDeviceId/${deviceId}/TripParameters`, {
+            params: {
+                from: from,
+                to: to
+            }
+        });
     }
 
     //===================== Vehicle =====================\\
     getAllAlarmByVehicleId(vehicleId: string, from: string, to: string) {
-        return this.http.get<QueryResult<Alarm>>(`ByVehicleId/${vehicleId}/Alarms/${from}/${to}`);
+        return this.http.get<QueryResult<Alarm>>(`ByVehicleId/${vehicleId}/Alarms`, {
+            params: {
+                from: from,
+                to: to
+            }
+        });
     }
 
     getAllThirdPartyDataByVehicleId(vehicleId: string, from: string, to: string) {
-        return this.http.get<QueryResult<ThirdPartyData>>(`ByVehicleId/${vehicleId}/ThirdPartyDatas/${from}/${to}`);
+        return this.http.get<QueryResult<ThirdPartyData>>(`ByVehicleId/${vehicleId}/ThirdPartyDatas`, {
+            params: {
+                from: from,
+                to: to
+            }
+        });
     }
 
     getAllDiagnosticByVehicleId(vehicleId: string, from: string, to: string) {
-        return this.http.get<QueryResult<Diagnostic[]>>(`ByVehicleId/${vehicleId}/Diagnostics/${from}/${to}`);
+        return this.http.get<QueryResult<Diagnostic[]>>(`ByVehicleId/${vehicleId}/Diagnostics`, {
+            params: {
+                from: from,
+                to: to
+            }
+        });
     }
 
     getAllTripByVehicleId(vehicleId: string, from: string, to: string) {
-        return this.http.get<QueryResult<Trip>>(`ByVehicleId/${vehicleId}/Trips/${from}/${to}`);
+        return this.http.get<QueryResult<Trip>>(`ByVehicleId/${vehicleId}/Trips`, {
+            params: {
+                from: from,
+                to: to
+            }
+        });
     }
 
     getAllLocationByVehicleId(vehicleId: string, from: string, to: string) {
-        return this.http.get<QueryResult<TripLocation>>(`ByVehicleId/${vehicleId}/TripLocations/${from}/${to}`);
+        return this.http.get<QueryResult<TripLocation>>(`ByVehicleId/${vehicleId}/TripLocations`, {
+            params: {
+                from: from,
+                to: to
+            }
+        });
     }
 
     getAllMotionByVehicleId(vehicleId: string, from: string, to: string) {
-        return this.http.get<QueryResult<TripMotion>>(`ByVehicleId/${vehicleId}/TripMotions/${from}/${to}`);
+        return this.http.get<QueryResult<TripMotion>>(`ByVehicleId/${vehicleId}/TripMotions`, {
+            params: {
+                from: from,
+                to: to
+            }
+        });
     }
 
     getAllParameterByVehicleId(vehicleId: string, from: string, to: string) {
-        return this.http.get<QueryResult<TripParameter>>(`ByVehicleId/${vehicleId}/TripParameters/${from}/${to}`);
+        return this.http.get<QueryResult<TripParameter>>(`ByVehicleId/${vehicleId}/TripParameters`, {
+            params: {
+                from: from,
+                to: to
+            }
+        });
     }
 
     getAllSensorByVehicleId(vehicleId: string, from: string, to: string) {
-        return this.http.get<QueryResult<TripSensor>>(`ByVehicleId/${vehicleId}/TripSensors/${from}/${to}`);
+        return this.http.get<QueryResult<TripSensor>>(`ByVehicleId/${vehicleId}/TripSensors`, {
+            params: {
+                from: from,
+                to: to
+            }
+        });
     }
 }

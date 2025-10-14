@@ -14,7 +14,6 @@ export interface BaseDataEntity {
     serial: string;
     timestamp: string;
     creationTime: string;
-    tripId?: number;
     location?: LocationDto;
 
     isEnded?: boolean;

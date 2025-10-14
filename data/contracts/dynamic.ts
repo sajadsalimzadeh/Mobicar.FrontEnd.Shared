@@ -7,8 +7,12 @@ export enum DynamicType {
     AntiTheftStatus = 3
 }
 
-export interface DynamicData {
-    $type: 'battery' | 'catalyst' | 'antiTheftStatus' | string;
+export abstract class DynamicData<T = any> {
+    abstract $type: 'battery' | 'catalyst' | 'antiTheftStatus' | string;
+
+    constructor(data?: Partial<T>) {
+        Object.assign(this, data);
+    }
 }
 
 export interface Dynamic extends BaseDataEntity {

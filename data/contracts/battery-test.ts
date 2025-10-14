@@ -30,7 +30,7 @@ export enum BatteryAlternatorStatus {
     HighVoltage = 2,
 }
 
-export class BatteryTestResult implements DynamicData {
+export class BatteryTestResult extends DynamicData<BatteryTestResult> {
     $type = 'battery' as const;
 
     samples: number[] = [];

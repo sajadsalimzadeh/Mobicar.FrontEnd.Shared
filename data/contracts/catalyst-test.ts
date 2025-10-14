@@ -1,7 +1,7 @@
 import { DynamicData } from "./dynamic";
 
 
-export enum CatalystStatus {
+export enum CatalystResult {
     Unknown = -1,
     VeryWeak = 0,
     Weak = 1,
@@ -10,8 +10,9 @@ export enum CatalystStatus {
     VeryGood = 4,
 }
 
-export class CatalystTestData implements DynamicData {
+export class CatalystTestResult extends DynamicData<CatalystTestResult> {
     $type = 'catalyst' as const;
-    
-    status: CatalystStatus = CatalystStatus.Unknown;
+    oxygenUpstreamSamples: number[] = [];
+    oxygenDownstreamSamples: number[] = [];
+    result: CatalystResult = CatalystResult.Unknown;
 }

@@ -9,6 +9,10 @@ export enum EcuTypes {
     ENGINE,
 }
 
+export const ecuTypeLabels = {
+    [EcuTypes.ENGINE]: 'engine',
+}
+
 const v1 = ["01", "02", "03", "04", "05", "06", "08", "09", "0A", "0D", "0E", "0F", "10", "11", "12", "13", "14", "FF"];
 
 export function getEcuTypeCode(type: EcuTypes, companyCode: string) {

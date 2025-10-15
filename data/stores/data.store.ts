@@ -1,13 +1,13 @@
 import { StoreDb } from '@framework/stores/db';
 import { ITable } from '@framework/utils/database';
-import { TranslateRequestRecord } from '@diag/contracts/translate';
-import { ThirdPartyData } from '@data/contracts/third-party-data';
-import { Diagnostic } from '@data/contracts/diagnostic';
-import { Trip } from '@data/contracts/trip';
-import { TripParameter } from '@data/contracts/trip-parameter';
-import { TripLocation } from '@data/contracts/trip-location';
-import { Alarm } from '@data/contracts/alarm';
-import { Dynamic } from '@data/contracts/dynamic';
+import { TranslateRequestRecord } from '../../core/contracts/dtc';
+import { ThirdPartyData } from '../contracts/third-party-data';
+import { Diagnostic } from '../contracts/diagnostic';
+import { Trip } from '../contracts/trip';
+import { TripParameter } from '../contracts/trip-parameter';
+import { TripLocation } from '../contracts/trip-location';
+import { Alarm } from '../contracts/alarm';
+import { Dynamic } from '../contracts/dynamic';
 
 
 export const dataStore = new class TripStore {

@@ -13,7 +13,7 @@ import {
     IngestRequest,
     IngestSensorRequest,
     IngestTripRequest
-} from "@data/contracts/ingest";
+} from "../contracts/ingest";
 import { CommandResult } from "@framework/contracts";
 
 @Injectable({

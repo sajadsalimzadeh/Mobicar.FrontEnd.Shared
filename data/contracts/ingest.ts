@@ -1,4 +1,4 @@
-import { BatteryTestResult } from "@data/contracts/battery-test";
+import { BatteryTestResult } from "../contracts/battery-test";
 import { EcuActuatorItem, EcuDtcItem, EcuInfoItem, EcuParameterItem } from "./ecu";
 
 export interface IngestBaseRequest {

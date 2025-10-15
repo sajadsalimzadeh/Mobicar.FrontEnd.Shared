@@ -1,5 +1,4 @@
 
-
 export interface Code {
     code: string
 }
@@ -31,12 +30,12 @@ export interface DtcTranslateRequest {
     encryptedCodes: string[];
 }
 
-export interface TranslateRequestRecord extends DtcTranslateRequest {
-    id: number;
-}
-
 export interface DtcTranslateResponse {
     encryptedCode: string;
     code: string;
     description: string;
+}
+
+export interface TranslateRequestRecord extends DtcTranslateRequest {
+    id: number;
 }

@@ -1,4 +1,4 @@
-import { BatteryAlternatorStatus, BatteryChargeStatus, BatteryHealthStatus, BatteryTestResult } from "@data/contracts/battery-test";
+import { BatteryAlternatorStatus, BatteryChargeStatus, BatteryHealthStatus, BatteryTestResult } from "../contracts/battery-test";
 import { BaseDataEntity } from "./entity";
 
 export interface ThirdPartyDataCompany {

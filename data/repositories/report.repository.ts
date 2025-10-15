@@ -2,15 +2,15 @@ import { Injectable, Injector } from "@angular/core";
 import { BaseApiRepository } from "@framework/repositories";
 import { BASE_URL_DATA } from "../config";
 import { QueryResult } from "@framework/contracts";
-import { Alarm } from "@data/contracts/alarm";
-import { Dynamic, DynamicType } from "@data/contracts/dynamic";
-import { ThirdPartyData } from "@data/contracts/third-party-data";
-import { Diagnostic } from "@data/contracts/diagnostic";
-import { Trip } from "@data/contracts/trip";
-import { TripLocation } from "@data/contracts/trip-location";
-import { TripMotion } from "@data/contracts/trip-motion";
-import { TripSensor } from "@data/contracts/trip-sensor";
-import { TripParameter } from "@data/contracts/trip-parameter";
+import { Alarm } from "../contracts/alarm";
+import { Dynamic, DynamicType } from "../contracts/dynamic";
+import { ThirdPartyData } from "../contracts/third-party-data";
+import { Diagnostic } from "../contracts/diagnostic";
+import { Trip } from "../contracts/trip";
+import { TripLocation } from "../contracts/trip-location";
+import { TripMotion } from "../contracts/trip-motion";
+import { TripSensor } from "../contracts/trip-sensor";
+import { TripParameter } from "../contracts/trip-parameter";
 
 @Injectable({
     providedIn: 'root'

@@ -1,6 +1,6 @@
 import { LiveDtoToken } from "../contracts/live";
 import { Injectable, Injector } from "@angular/core";
-import { BASE_URL_DATA } from "@data/config";
+import { BASE_URL_DATA } from "../config";
 import { QueryResult } from "@framework/contracts";
 import { BaseApiRepository } from "@framework/repositories";
 
